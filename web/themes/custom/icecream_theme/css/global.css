@@ -1,5 +1,197 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f1e3;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Admin toolbar wrapper */
+#admin-toolbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Push body content below admin toolbar */
+body.toolbar-enabled {
+  padding-top: 50px; /* Adjust based on Drupal admin toolbar height */
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(255, 154, 158, 0.3);
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+/* Flex container for header inner */
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo styles */
+.logo a {
+  display: inline-block;
+  max-height: 60px;
+}
+
+.logo img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* Menu styles */
+.site-menu {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.site-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-menu a:hover,
+.site-menu a:focus {
+  color: #ff355e;
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Wrapper for content and sidebar */
+.content-sidebar-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto 4rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Content and Sidebar base styles */
+.site-content,
+.site-sidebar {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(250, 208, 196, 0.3);
+  padding: 2rem;
+  color: #444;
+  box-sizing: border-box;
+}
+
+/* Content takes more space */
+.site-content {
+  flex: 3 1 60%;
+  min-width: 280px;
+}
+
+/* Sidebar */
+.site-sidebar {
+  flex: 1 1 30%;
+  min-width: 220px;
+  background: #fff7f5;
+  box-shadow: 0 6px 10px rgba(250, 208, 196, 0.2);
+}
+
+/* Footer */
+.site-footer {
+  background: #ff9a9e;
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 8px rgba(255, 154, 158, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Headings */
 h1,
 h2,
+h3,
+h4 {
+  color: #ff6f91;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 p {
-  color: rgb(214, 39, 68);
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  body.toolbar-enabled {
+    padding-top: 70px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .site-menu {
+    flex-wrap: wrap;
+  }
+
+  .content-sidebar-wrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .site-content,
+  .site-sidebar {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .site-sidebar {
+    margin-top: 1.5rem;
+  }
 }

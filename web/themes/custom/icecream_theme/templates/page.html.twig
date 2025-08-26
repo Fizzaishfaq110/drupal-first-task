@@ -1,15 +1,54 @@
-<div id="header>
-{{page.header}}
-</div>
+<!DOCTYPE html>
+<html lang="{{ language.language }}">
+<head>
+  <head-placeholder token="{{ placeholder_token }}">
+  <title>{{ head_title|safe_join(' | ') }}</title>
+  <css-placeholder token="{{ placeholder_token }}">
+  <js-placeholder token="{{ placeholder_token }}">
+</head>
+<body{{ attributes }}>
 
-<div id="menu>
-{{page.menu}}
-</div>
+  {# Drupal admin toolbar region, rendered by Drupal #}
+  {% if page.admin_toolbar %}
+    <div id="admin-toolbar-wrapper">
+      {{ page.admin_toolbar }}
+    </div>
+  {% endif %}
 
-<div id="content>
-{{page.content}}
-</div>
+  <header id="header" class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        {% if logo %}
+          <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+            <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+          </a>
+        {% else %}
+          <a href="{{ path('<front>') }}" class="site-name">{{ site_name }}</a>
+        {% endif %}
+      </div>
 
-<div id="footer>
-{{page.footer}}
-</div>
+      <nav id="menu" class="site-menu" role="navigation" aria-label="{{ 'Primary menu'|t }}">
+        {{ page.menu }}
+      </nav>
+    </div>
+  </header>
+
+  <div id="content-sidebar-wrapper" class="content-sidebar-wrapper">
+    <main id="content" class="site-content">
+      {{ page.content }}
+    </main>
+
+    {% if page.sidebar %}
+    <aside id="sidebar" class="site-sidebar">
+      {{ page.sidebar }}
+    </aside>
+    {% endif %}
+  </div>
+
+  <footer id="footer" class="site-footer">
+    {{ page.footer }}
+  </footer>
+
+  <js-bottom-placeholder token="{{ placeholder_token }}">
+</body>
+</html>
