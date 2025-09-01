@@ -13,3 +13,12 @@ hello_name.form:
     _title: "Hello Name Form"
   requirements:
     _permission: "access content"
+    
+hello_name.greeting:
+  path: '/hello-name-greeting/{name}'
+  defaults:
+    _controller: '\Drupal\hello_name\Controller\HelloNameController::greeting'
+    _title: 'Greeting'
+  requirements:
+    _permission: 'access content'
+ 
