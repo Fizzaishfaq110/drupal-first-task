@@ -7,9 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SecondController extends ControllerBase {
     public function second () {
-        return new Response("Hello , Fizza Ishfaq");
+        return new Response("Hello , I am Fizza Ishfaq");
     }
 }
-
 
 ?>
