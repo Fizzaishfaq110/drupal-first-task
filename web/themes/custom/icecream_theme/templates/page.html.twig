@@ -17,6 +17,7 @@
 
   <header id="header" class="site-header">
     <div class="header-inner">
+   
       <div class="logo">
         {% if logo %}
           <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
@@ -47,6 +48,7 @@
 
   <footer id="footer" class="site-footer">
     {{ page.footer }}
+    {{first_module_variable}}
   </footer>
 
   <js-bottom-placeholder token="{{ placeholder_token }}">
