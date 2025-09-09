@@ -906,4 +906,4 @@ $settings['config_sync_directory'] = 'sites/default/files/config___-ttoMXvLvO0Y1
 
 // $settings['config_exclude_modules'] = ['devel', 'webprofiler']; for installing module on development; don’t include these modules in production
 
-// $config['system.logging']['error_level'] = 'verbose'; for logging
+//$config['system.logging']['error_level'] = 'verbose'; for logging
