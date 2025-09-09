@@ -1,0 +1,6 @@
+name: React Online Shop Module
+description: Display react shopping cart module
+type: module
+core_version_requirement: ^10 || ^11
+# dependencies:
+#   - drupal:node
