@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title ?? "Forest Theme" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ base_path ~ directory }}/css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="logo">
+          {{ page.logo ?? "🌲 Forest Theme" }}
+        </div>
+        <nav class="menu">
+          {{ page.menu }}
+        </nav>
+      </header>
+
+      <div class="main-wrapper">
+        <aside class="sidebar">
+          {{ page.sidebar }}
+        </aside>
+
+        <main class="content">
+          {{ page.content }}
+
+          {% if node is defined %}
+          <article class="article">
+            <div class="node">
+              {% if node.field_tags is defined %}
+              <div class="tags">
+                {% for tag in node.field_tags %}
+                <span class="tag">
+                  <a href="{{ tag.url }}">{{ tag.entity.name.value }}</a>
+                </span>
+                {% endfor %}
+              </div>
+              {% endif %}
+
+              <div class="read-more">
+                <a
+                  href="{{ path('entity.node.canonical', { node: node.id }) }}"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </article>
+          {% endif %}
+        </main>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-left">
+          {{ page.footer }}
+        </div>
+        <div class="footer-right">
+          {{ page.who_is_online }}
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+name : Forest theme
+type: theme
+base theme: false
+description: "A custom theme named forest"
+package: custom
+version: 0.0.1
+core_version_requirement: ^9 || ^10 || ^11
+
+libraries:
+  - forest/global
+
+regions:
+  header: header
+  menu: menu
+  content: content
+  sidebar: sidebar
+  footer: footer
