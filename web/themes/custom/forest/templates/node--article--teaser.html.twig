@@ -1,0 +1,27 @@
+<article class="mui-card">
+  <div class="mui-card-header">
+    <h2 class="mui-card-title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+  </div>
+
+  {% if content.field_image %}
+    <div class="mui-card-media">
+      {{ content.field_image }}
+    </div>
+  {% endif %}
+
+  <div class="mui-card-content">
+    {{ content.body }}
+  </div>
+
+  {% if content.field_tags %}
+    <div class="mui-card-tags">
+      {{ content.field_tags }}
+    </div>
+  {% endif %}
+
+  <div class="mui-card-actions">
+    <a href="{{ url }}" class="mui-button">Read More</a>
+  </div>
+</article>
