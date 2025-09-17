@@ -909,3 +909,4 @@ $settings['config_sync_directory'] = 'sites/default/files/config___-ttoMXvLvO0Y1
 // $config['system.logging']['error_level'] = 'verbose'; for logging
 
 //settings and config settings
+// ini_set('memory_limit', '2G');
